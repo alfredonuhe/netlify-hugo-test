@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://gregarious-chaja-569265.netlify.app"
 languageCode = "en"
 title = "Monochrome"
 theme = "hugo-theme-monochrome"
