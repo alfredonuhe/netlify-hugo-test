@@ -9,18 +9,18 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
-    folder: "content/en/posts" # The path to the folder where the documents are stored
+    folder: "content/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: "{{year}_{month}_{day}_{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Publish Date", name: "date", widget: "datetime", default: "{{year}/{month}/{day}}"}
       - {label: "Description", name: "description", widget: "string"}
-      - {label: "Type", name: "type", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Categories", name: "categories", widget: "list"}
-      - {label: "Series", name: "series", widget: "list"}
-      - {label: "Aliases", name: "aliases", widget: "list"}
-
+      - {label: "Type", name: "type", widget: "string", hidden: true, default: "blank"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Series", name: "series", widget: "list", required: false}
+      - {label: "Aliases", name: "aliases", widget: "list", required: false}
+      - {label: "Content", name: "content", widget: "markdown"}
 
